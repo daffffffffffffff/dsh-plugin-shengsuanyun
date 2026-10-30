@@ -1,0 +1,6 @@
+# Installed by `dsh plugin add dsh-plugin-shengsuanyun`.
+# The provider route is declared through settings at startup, not by replacing
+# the llm-pi-ai entry: a cordis config patch overwrites the whole config.
+- insert:
+    - id: shengsuanyun
+      name: dsh-plugin-shengsuanyun
