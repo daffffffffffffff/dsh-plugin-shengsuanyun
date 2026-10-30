@@ -3,8 +3,9 @@ import type { SlotRegistry } from '@deepseek-ai/dsh-client-runtime/client'
 import type {} from '@deepseek-ai/dsh-client-ui-settings/client'
 import { ShengsuanyunSettings } from './SettingsSection.js'
 import { installStyles } from './styles.js'
+import { apply as mountMarketClient } from '../market/client/index.js'
 
-export const inject = ['slots']
+export const inject = ['slots', 'locale', 'sessions']
 
 export function apply(ctx: Context & { readonly slots: SlotRegistry }): void {
   ctx.effect(() => installStyles(), 'shengsuanyun: styles')
@@ -14,4 +15,5 @@ export function apply(ctx: Context & { readonly slots: SlotRegistry }): void {
     order: 25,
     label: '胜算云',
   }, ShengsuanyunSettings))
+  mountMarketClient(ctx)
 }

@@ -17,5 +17,5 @@
     "types": ["node"]
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["src/client/**"]
+  "exclude": ["src/client/**", "src/market/client/**"]
 }

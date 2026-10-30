@@ -1,12 +1,6 @@
 import { defineConfig } from 'tsdown'
 
-const clientExternals = [
-  'react',
-  'react/jsx-runtime',
-  '@deepseek-ai/cordis',
-  '@deepseek-ai/dsh-client-runtime/client',
-  '@deepseek-ai/dsh-client-ui-settings/client',
-]
+const external = [/^@deepseek-ai\//, 'react', 'react/jsx-runtime']
 
 export default defineConfig([
   {
@@ -20,7 +14,7 @@ export default defineConfig([
     dts: false,
     sourcemap: true,
     clean: true,
-    external: [/^@deepseek-ai\//],
+    external,
   },
   {
     name: 'dsh-plugin-shengsuanyun/client',
@@ -34,7 +28,7 @@ export default defineConfig([
     clean: false,
     dts: false,
     sourcemap: true,
-    external: clientExternals,
+    external,
     outputOptions: {
       entryFileNames: 'client.js',
       banner: 'window.__ModuleLoader__.load({ id: "dsh-plugin-shengsuanyun", factory: (require) => {',

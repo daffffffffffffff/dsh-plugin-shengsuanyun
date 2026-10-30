@@ -7,6 +7,6 @@
     "jsx": "react-jsx",
     "types": []
   },
-  "include": ["src/client/**/*.ts", "src/client/**/*.tsx"],
+  "include": ["src/client/**/*.ts", "src/client/**/*.tsx", "src/market/client/**/*.ts", "src/market/client/**/*.tsx"],
   "exclude": []
 }
